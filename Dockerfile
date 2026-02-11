@@ -5,7 +5,7 @@ FROM python:3.12-slim
 WORKDIR /app
 
 # Copy the Python script into the container
-COPY udp_mirror.py .
+COPY UdpMirror.py .
 
 # Expose the port (default 9999, but will be configurable)
 EXPOSE 9999/udp
@@ -15,7 +15,7 @@ ENV UDP_PORT=9999
 ENV BUFFER_SIZE=1024
 
 # Run the UDP mirror server
-CMD ["python", "udp_mirror.py"]
+CMD ["python", "UdpMirror.py"]
 
 #docker build -t udp-mirror .
 #docker run -e UDP_PORT=5005 -e BUFFER_SIZE=2048 -p 5005:5005/udp udp-mirror
