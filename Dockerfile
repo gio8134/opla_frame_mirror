@@ -23,3 +23,6 @@ CMD ["python", "UdpMirror.py"]
 #-e UDP_PORT=5005 sets the port the server listens on.
 #-e BUFFER_SIZE=2048 sets the buffer size for UDP packets.
 #-p 5005:5005/udp maps the container’s UDP port to the host.
+
+#docker tag udp-mirror:latest gio8134/udp-mirror:latest
+#docker push gio8134/udp-mirror:latest

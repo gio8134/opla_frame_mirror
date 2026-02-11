@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udp-mirror-controller
+  labels:
+    app: udp-mirror-controller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: udp-mirror-controller
+  template:
+    metadata:
+      labels:
+        app: udp-mirror-controller
+    spec:
+      serviceAccountName: udp-mirror-controller
+      containers:
+        - name: udp-mirror-controller
+          image: gio8134/udp-mirror-controller:latest
+          imagePullPolicy: Always
